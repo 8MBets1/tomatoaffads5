@@ -94,5 +94,30 @@ images.forEach(img => {
 
 
 
+   // malay time livechat
+const images = document.querySelectorAll('img');
 
+// Loop through each img element and set its loading attribute to "lazy"
+images.forEach(img => {
+    img.setAttribute('loading', 'lazy');
+});
+
+
+
+  // Get Malaysia Time
+  const now = new Date();
+  const malaysiaTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
+  const hour = malaysiaTime.getHours();
+
+  // Define links
+  const defaultLink = "https://direct.lc.chat/15562614/";
+  const malaysiaLink = "https://direct.lc.chat/19210451/";
+
+  // Find the chat link by href or icon class
+  const chatLink = document.querySelector('a[href="https://direct.lc.chat/15562614/"]');
+
+  // Update link based on Malaysia time
+  if (chatLink) {
+    chatLink.href = (hour >= 11 && hour < 23) ? malaysiaLink : defaultLink;
+  }
 
