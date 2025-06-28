@@ -121,3 +121,47 @@ images.forEach(img => {
     chatLink.href = (hour >= 11 && hour < 23) ? malaysiaLink : defaultLink;
   }
 
+
+
+//Contact links manage
+const links = [
+  {
+    href: "https://wa.me/+12678413558",
+    aClass: "WhatsApp",
+    liClass: "flow-child",
+    iconClass: "fa-whatsapp"
+  },
+  {
+    href: "https://t.me/aff8m",
+    aClass: "",
+    liClass: "flow-child",
+    iconClass: "fa-send"
+  },
+  {
+    href: "https://direct.lc.chat/19210451/",
+    aClass: "",
+    liClass: "flow-child shaking",
+    iconClass: "fa-comments"
+  }
+];
+
+const flowDiv = document.querySelector('.flow');
+const ul = document.createElement('ul');
+
+links.forEach(link => {
+  const li = document.createElement('li');
+  link.liClass.split(" ").forEach(cls => li.classList.add(cls));
+
+  const a = document.createElement('a');
+  a.href = link.href;
+  if (link.aClass) a.classList.add(link.aClass);
+
+  const i = document.createElement('i');
+  i.classList.add('fa', link.iconClass);
+
+  a.appendChild(i);
+  li.appendChild(a);
+  ul.appendChild(li);
+});
+
+flowDiv.appendChild(ul);
