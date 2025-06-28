@@ -123,11 +123,21 @@ images.forEach(img => {
 
 
 
-//Contact links manage********************************************************************
-const ul = document.querySelector('.flow ul');
+//Contact links manage
 
-ul.innerHTML += `
-  <li class="flow-child"><a href="https://wa.me/+12678413558" class="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
-  <li class="flow-child"><a href="https://t.me/affiliate8mbet"><i class="fa fa-send"></i></a></li>
-  <li class="flow-child shaking"><a href="https://direct.lc.chat/19210451/"><i class="fa fa-comments"></i></a></li>
-`;
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('.flow .flow-child a');
+        const urls = [
+            "https://wa.me/+12678413558",         // WhatsApp
+            "https://t.me/aff8m",        // Telegram
+            "https://direct.lc.chat/15562614/"    // LiveChat
+        ];
+
+        links.forEach((link, index) => {
+            if (urls[index]) {
+                link.href = urls[index];
+            }
+        });
+    });
+</script>
