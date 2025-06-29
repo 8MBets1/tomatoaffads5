@@ -94,17 +94,7 @@ images.forEach(img => {
 
 
 
-   // malay time livechat
-const images = document.querySelectorAll('img');
-
-// Loop through each img element and set its loading attribute to "lazy"
-images.forEach(img => {
-    img.setAttribute('loading', 'lazy');
-});
-
-
-
-  // Get Malaysia Time
+   // Live chat link update by Malaysia Time
   const now = new Date();
   const malaysiaTime = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Kuala_Lumpur" }));
   const hour = malaysiaTime.getHours();
@@ -121,23 +111,7 @@ images.forEach(img => {
     chatLink.href = (hour >= 11 && hour < 23) ? malaysiaLink : defaultLink;
   }
 
-
-
-//Contact links manage
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const links = document.querySelectorAll('.flow .flow-child a');
-        const urls = [
-            "https://wa.me/+12678413558",         // WhatsApp
-            "https://t.me/aff8m",        // Telegram
-            "https://direct.lc.chat/15562614/"    // LiveChat
-        ];
-
-        links.forEach((link, index) => {
-            if (urls[index]) {
-                link.href = urls[index];
-            }
-        });
-    });
-</script>
+//Telegram link update 
+document.querySelectorAll('a[href="https://t.me/affiliate8mbet"]').forEach(link => {
+  link.href = "https://t.me/aff8m";
+});
